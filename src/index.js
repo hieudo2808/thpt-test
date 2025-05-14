@@ -1,11 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
-import { AuthProvider } from './contexts/AuthContext';
-import App from './App';
-import './styles/index.scss';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import { AuthProvider } from "./contexts/AuthContext";
+import App from "./App";
+import "./styles/index.scss";
+import { disableReactDevTools } from "@fvilers/disable-react-devtools";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+if (process.env.NODE_ENV === "production") {
+  // Disable React DevTools in production
+  disableReactDevTools();
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
@@ -14,5 +20,5 @@ root.render(
         <App />
       </AuthProvider>
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.StrictMode>
 );
