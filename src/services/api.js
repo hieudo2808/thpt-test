@@ -1,9 +1,9 @@
 import axios from "axios";
 
 const api = axios.create({
-  headers: new Headers({
+  headers: {
     "ngrok-skip-browser-warning": "69420",
-  }),
+  },
   baseURL: process.env.REACT_APP_API_URL,
 });
 
