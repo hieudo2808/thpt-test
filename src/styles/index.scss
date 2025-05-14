@@ -1,0 +1,173 @@
+@import "variables";
+
+// Reset và base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: $text-color;
+  background-color: $background-color;
+  min-height: 100vh;
+}
+
+// Typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: $spacing-sm;
+  color: $primary-color;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.75rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: $spacing-sm;
+}
+
+// Layout
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+// Links
+a {
+  color: $secondary-color;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: darken($secondary-color, 15%);
+  }
+}
+
+// Forms
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: $spacing-xs;
+  border: 1px solid #ddd;
+  border-radius: $border-radius;
+  margin: $spacing-xs 0;
+}
+
+button {
+  background-color: $secondary-color;
+  color: white;
+  border: none;
+  padding: $spacing-xs $spacing-md;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($secondary-color, 10%);
+  }
+
+  &:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+}
+
+// Utility classes
+.text-center {
+  text-align: center;
+}
+
+.mt-1 {
+  margin-top: $spacing-xs;
+}
+.mt-2 {
+  margin-top: $spacing-sm;
+}
+.mt-3 {
+  margin-top: $spacing-md;
+}
+.mt-4 {
+  margin-top: $spacing-lg;
+}
+
+.mb-1 {
+  margin-bottom: $spacing-xs;
+}
+.mb-2 {
+  margin-bottom: $spacing-sm;
+}
+.mb-3 {
+  margin-bottom: $spacing-md;
+}
+.mb-4 {
+  margin-bottom: $spacing-lg;
+}
+
+.flex {
+  display: flex;
+  gap: $spacing-sm;
+
+  &-center {
+    @extend .flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// Global animations
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+// Error message styling
+.error-message {
+  color: $error-color;
+  background-color: lighten($error-color, 35%);
+  padding: $spacing-xs;
+  border-radius: $border-radius;
+  margin: $spacing-sm 0;
+}
+
+// Success message styling
+.success-message {
+  color: $success-color;
+  background-color: lighten($success-color, 35%);
+  padding: $spacing-xs;
+  border-radius: $border-radius;
+  margin: $spacing-sm 0;
+}

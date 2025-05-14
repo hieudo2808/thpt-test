@@ -1,0 +1,175 @@
+@import "./variables";
+
+.examContainer {
+  max-width: 800px;
+  margin: $spacing-lg auto;
+  padding: $spacing-md;
+  background: white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+}
+
+.examList {
+  display: grid;
+  gap: $spacing-md;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.examCard {
+  padding: $spacing-md;
+  border: 1px solid #ddd;
+  border-radius: $border-radius;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.timer {
+  background: $error-color;
+  color: white;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $border-radius;
+  margin-bottom: $spacing-md;
+}
+
+.question {
+  margin-bottom: $spacing-lg;
+  padding: $spacing-md;
+  border: 1px solid #eee;
+  border-radius: $border-radius;
+
+  label {
+    display: block;
+    margin: $spacing-xs 0;
+  }
+}
+
+.startButton {
+  background: $success-color;
+  color: white;
+  border: none;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $border-radius;
+  cursor: pointer;
+}
+
+.questionEditor {
+  margin: $spacing-md 0;
+  padding: $spacing-md;
+  background: #f9f9f9;
+  border-radius: $border-radius;
+
+  textarea,
+  input,
+  select {
+    width: 100%;
+    margin: $spacing-xs 0;
+    padding: $spacing-xs;
+  }
+}
+
+// Thêm các style cho component ExamResults
+.scoreSummary {
+  background: #f8f9fa;
+  padding: $spacing-md;
+  border-radius: $border-radius;
+  margin-bottom: $spacing-lg;
+  text-align: center;
+}
+
+.resultsDetails {
+  margin-top: $spacing-lg;
+}
+
+.questionResult {
+  padding: $spacing-md;
+  margin-bottom: $spacing-md;
+  border-radius: $border-radius;
+  border: 2px solid transparent;
+
+  &.correct {
+    border-color: $success-color;
+    background: rgba($success-color, 0.1);
+  }
+
+  &.incorrect {
+    border-color: $error-color;
+    background: rgba($error-color, 0.1);
+  }
+}
+
+.status {
+  font-weight: bold;
+  margin-top: $spacing-xs;
+
+  .correct & {
+    color: $success-color;
+  }
+
+  .incorrect & {
+    color: $error-color;
+  }
+}
+
+.options {
+  display: grid;
+  gap: $spacing-xs;
+  margin: $spacing-xs 0;
+}
+
+.option {
+  padding: $spacing-xs;
+  border-radius: $border-radius;
+  background: #eee;
+
+  &.correctOption {
+    background: $success-color;
+    color: white;
+  }
+}
+
+// Thêm các style mới
+.formGroup {
+  margin-bottom: $spacing-md;
+
+  label {
+    display: block;
+    margin-bottom: $spacing-xs;
+    font-weight: 500;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: $spacing-xs;
+    border: 1px solid #ddd;
+    border-radius: $border-radius;
+  }
+}
+
+.primaryButton {
+  @extend button !optional;
+  width: 100%;
+  margin: $spacing-md 0;
+}
+
+.authLink {
+  text-align: center;
+  margin-top: $spacing-md;
+
+  a {
+    color: $secondary-color;
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.errorMessage {
+  @extend .error-message !optional;
+  margin-bottom: $spacing-md;
+}
